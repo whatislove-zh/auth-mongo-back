@@ -29,7 +29,9 @@ app.post("/register", registerValidation, UserController.register);
 app.get("/auth", checkAuth, UserController.authMe);
 
 //listen port/////////////////////////////////////////////
-app.listen(4444, (err) => {
+const PORT = process.env.PORT || 3030;
+
+app.listen(PORT, (err) => {
   if (err) {
     return console.log(err);
   }
